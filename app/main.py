@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .routers import health
+from .routers import health, rooms, autocomplete, websocket
+from .db import init_db
 
 app = FastAPI(
     title="Realtime Pair Programming Backend",
@@ -17,7 +18,15 @@ app.add_middleware(
 )
 
 
+@app.on_event("startup")
+async def startup_event():
+    init_db()
+
+
 app.include_router(health.router)
+app.include_router(rooms.router)
+app.include_router(autocomplete.router)
+app.include_router(websocket.router)
 
 @app.get("/")
 def root() -> dict:
