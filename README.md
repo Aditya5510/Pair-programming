@@ -32,7 +32,6 @@ backend/
 │   └── schemas/         # Pydantic schemas
 │       └── rooms.py     # Request/response schemas
 ├── requirements.txt     # Python dependencies
-└── API_TESTING_GUIDE.md # Complete API testing documentation
 ```
 
 ## Setup Instructions
