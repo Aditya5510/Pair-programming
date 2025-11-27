@@ -170,5 +170,3 @@ The server will start at `http://localhost:8000`
 - Simple last-write-wins conflict
 - No user authentication
 - Database writes on every keystroke
-- No cursor position synchronization
-- No user identification/names
